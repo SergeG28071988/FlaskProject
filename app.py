@@ -14,7 +14,7 @@ def about():
 
 
 @app.route('/payment')
-def about():
+def payment():
     return render_template("payment.html")
 
 

@@ -2,26 +2,27 @@
 
 {% block title %}
 Обратная связь
+
 {% endblock %}
 
 {% block content %}
-<br><br><br><br><br>
+<br><br><br>
 <div class="container text-center">
   <h1 class="text-center">Свяжитесь с нами</h1>
-  <form action="submit_form.php" method="POST">
-    <div class="form-group">
+  <form method="POST">
+    <div >
       <label for="name">Имя:</label>
       <input type="text" id="name" name="name" required>
     </div>
-    <div class="form-group">
+    <div>
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
     </div>
-    <div class="form-group">
+    <div>
       <label for="message">Сообщение:</label>
       <textarea id="message" name="message" required></textarea>
     </div>
-    <button type="submit">Отправить</button>
+    <button type="submit" class="btn btn-danger">Отправить</button>
   </form>
 </div>
 

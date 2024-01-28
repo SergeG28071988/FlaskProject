@@ -1,65 +1,52 @@
 {% extends 'base.html' %}
 
-{% block title  %}
+{% block title %}
 Про нас
-{% endblock  %}
+{% endblock %}
 
-{% block content  %}
-<br><br><br><br>
-<h1>Про нас</h1>
+{% block content %}
+<br><br>
 
-<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-    <div class="col">
-      <div class="card mb-4 rounded-3 shadow-sm">
-        <div class="card-header py-3">
-          <h4 class="my-0 fw-normal">Free</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>10 users included</li>
-            <li>2 GB of storage</li>
-            <li>Email support</li>
-            <li>Help center access</li>
-          </ul>
-          <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card mb-4 rounded-3 shadow-sm">
-        <div class="card-header py-3">
-          <h4 class="my-0 fw-normal">Pro</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>20 users included</li>
-            <li>10 GB of storage</li>
-            <li>Priority email support</li>
-            <li>Help center access</li>
-          </ul>
-          <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card mb-4 rounded-3 shadow-sm border-primary">
-        <div class="card-header py-3 text-bg-primary border-primary">
-          <h4 class="my-0 fw-normal">Enterprise</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li>30 users included</li>
-            <li>15 GB of storage</li>
-            <li>Phone and email support</li>
-            <li>Help center access</li>
-          </ul>
-          <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+  <p>Мир авто - это автосалон, который занимается продажей автомобилей ведущих автомобильных брендов. 
+    Мы работаем на рынке уже много лет и предлагаем широкий выбор качественных 
+    автомобилей.</p>
 
-{% endblock  %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Марка</th>
+        <th>Модель</th>
+        <th>Год производства</th>
+        <th>Цвет</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>BMW</td>
+        <td>X5</td>
+        <td>2020</td>
+        <td>Черный</td>
+      </tr>
+      <tr>
+        <td>Mercedes-Benz</td>
+        <td>E-Class</td>
+        <td>2019</td>
+        <td>Серебристый</td>
+      </tr>
+      <tr>
+        <td>Audi</td>
+        <td>A4</td>
+        <td>2018</td>
+        <td>Белый</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="car-images">
+    <img src="https://laitovorussia.ru/assets/templates/images/cars/1083.jpg" alt="BMW X5" style="width: 300px; height: auto;">
+    <img src="https://www.newcartestdrive.com/wp-content/uploads/2013/07/13-e550-hero.jpg" alt="Mercedes-Benz E-Class" style="width: 300px; height: auto;">
+    <img src="https://auto.vercity.ru/gallery/img/automobiles/Audi/2012%20Audi%20A4%202.0T%20Quattro%20S-Line%20Sedan%20(UK)/300x/2012%20Audi%20A4%202.0T%20Quattro%20S-Line%20Sedan%20(UK)%20008.jpg" alt="Audi A4" style="width: 300px; height: auto;">
+</div>
+</div>
+
+{% endblock %}

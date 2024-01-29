@@ -26,8 +26,11 @@ footer {
       margin-right: -15px;
     }
     
-    footer .col-12.col-md {
+    footer .col-12.col-md {      
       text-align: center;
+      
+      justify-content: center;
+      align-items: center;
     }
     
     footer img {

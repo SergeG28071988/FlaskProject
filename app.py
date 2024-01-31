@@ -49,6 +49,12 @@ def cars():
     return render_template("cars.html", cars=cars)
 
 
+@app.route('/cars/<int:id>')
+def car_detail(id):
+    car = Car.query.get(id)
+    return render_template("car-detail.html", car=car)
+
+
 
 @app.route('/about')
 def about():

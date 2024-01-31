@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -24,9 +24,30 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/create-car')
+@app.route('/create-car', methods=['POST', 'GET'])
 def create_car():
-    return render_template("create-car.html")
+    if request.method == 'POST':
+        brand = request.form['brand']
+        model = request.form['model']
+        year = request.form['year']
+        color = request.form['color']
+
+        car = Car(brand=brand, model=model, year=year, color=color)
+        try:
+            db.session.add(car)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return "При добавлении автомобиля произошла ошибка!!!"
+    else:
+        return render_template("create-car.html")
+    
+
+@app.route('/cars')
+def cars():
+    cars = Car.query.order_by(Car.year).all()
+    return render_template("cars.html", cars=cars)
+
 
 
 @app.route('/about')

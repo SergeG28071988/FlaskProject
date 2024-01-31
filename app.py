@@ -36,7 +36,7 @@ def create_car():
         try:
             db.session.add(car)
             db.session.commit()
-            return redirect('/')
+            return redirect('/cars')
         except:
             return "При добавлении автомобиля произошла ошибка!!!"
     else:

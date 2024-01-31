@@ -55,6 +55,35 @@ def car_detail(id):
     return render_template("car-detail.html", car=car)
 
 
+@app.route('/cars/<int:id>/delete')
+def car_delete(id):
+    car = Car.query.get_or_404(id)
+
+    try:
+        db.session.delete(car)
+        db.session.commit()
+        return redirect('/cars')
+    except:
+        return "При удалении автомобиля произошла ошибка!!!"   
+    
+
+@app.route('/cars/<int:id>/update', methods=['POST', 'GET'])
+def car_update(id):
+    car = Car.query.get(id)
+    if request.method == 'POST':
+        car.brand = request.form['brand']
+        car.model = request.form['model']
+        car.year = request.form['year']
+        car.color = request.form['color']        
+        try:            
+            db.session.commit()
+            return redirect('/cars')
+        except:
+            return "При изменении автомобиля произошла ошибка!!!"
+    else:
+        
+        return render_template("car-update.html", car=car)    
+
 
 @app.route('/about')
 def about():

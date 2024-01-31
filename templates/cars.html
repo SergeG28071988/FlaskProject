@@ -7,15 +7,29 @@
 {% block content %}
 <br>
 <div class="container mt-5">
-  <h1 class="text-center">Все автомобили</h1><br>   
-    {% for car in cars  %}   
-        <div class="alert alert-info">
-            <h3>{{ car.brand }}</h3>
-            <p>{{ car.model }}</p>
-            <p>{{ car.year }}</p>
-            <p>{{ car.color }}</p>
-            <button class="btn btn-warning">Детальнее</button>  
-        </div>                                        
-    {% endfor %}
+  <h1 class="text-center">Все автомобили</h1><br>
+    {% if cars %}
+    <table class="table">
+        <thead>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+            <th>Detail</th>
+        </thead>
+        <tbody>
+            {% for car in cars  %}            
+                <tr>
+                    <td>{{ car.brand }}</td>
+                    <td>{{ car.model }}</td>
+                    <td>{{ car.year }}</td>
+                    <td>{{ car.color }}</td>
+                    <td><button class="btn btn-warning">Детальнее</button> </td>
+                </tr>                      
+            {% endfor %}
+        </tbody>
+    </table>
+   {% else %}
+   {% endif  %}
 </div>
 {% endblock %}

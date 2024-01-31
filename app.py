@@ -1,6 +1,10 @@
 from flask import Flask, render_template, url_for
+from flask_sqlalchemy import SQLAlchemy
+from models import db, Car
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cars.db'
+db.init_app(app)
 
 @app.route('/')
 @app.route('/home')

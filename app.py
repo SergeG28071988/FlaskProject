@@ -1,10 +1,22 @@
 from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
-from models import db, Car
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cars.db'
-db.init_app(app)
+db = SQLAlchemy(app)
+
+
+class Car(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    brand = db.Column(db.String(50), nullable=False)
+    model = db.Column(db.String(50), nullable=False)
+    year = db.Column(db.Integer, nullable=False)
+    color = db.Column(db.String(20), nullable=False)
+
+    def __repr__(self):
+        return f"Car {self.id}"
+    
 
 @app.route('/')
 @app.route('/home')

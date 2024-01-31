@@ -24,6 +24,11 @@ def index():
     return render_template("index.html")
 
 
+@app.route('/create-car')
+def create_car():
+    return render_template("create-car.html")
+
+
 @app.route('/about')
 def about():
     return render_template("about.html")
